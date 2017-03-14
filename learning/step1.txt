@@ -1,1 +1,61 @@
 #git/learing/step1
+
+
+1.pwd					查看当前目录
+2.mkdir	learngit	创建目录
+
+3.git init			把目录变为git可以管理的仓库
+4.ls -ah				查看隐藏文件
+
+5.git add readme.txt	把文件添加到仓库
+6.git commit -m "readme file"		把文件提交到仓库
+
+7.git status 			掌握仓库状态，看是否有文件修改
+8.git diff			查看修改内容
+
+9.git log			查看提交记录
+10.git log --pretty=oneline		查看缩略日志
+
+11.git reset --hard HEAD^		回退到上一版本。注：上上版本HEAD^^ 或 HEAD~2
+12.git reset --hard ...			回退到特定版本 ...为版本号
+
+13.cat readme.txt				查看内容
+14.git reflog					查看之前使用过的所有命令，有关版本的
+
+15.git push -u origin master	第一次推送到远程库，之后去掉-u
+16.git checkout -- readme.txt	在没有提交前，回退到上一版本。即回退一步
+
+17.git reset HEAD readme.txt	提交后回退一步，将暂存区的文件删除
+
+18.rm test.txt					删除文件，此时工作区删除了，版本库并未删除
+19.git checkout -- test.txt		删错了恢复
+
+20.git rm test.txt				从版本库删除
+21.git commit -m "remove test.txt"	提交版本库
+
+
+22.git checkout -b dev			创建分支dev并切换到分支
+								等于：git branch dev  +  git checkout dev
+23.git branch					查看分支
+24.git branch dev				创建分支dev
+25.git checkout dev				切换到dev分支
+26.git merge dev				合并div当前分支
+
+27.git branch -d dev			删除分支
+28.git push origin :dev			删除远程仓库的分支
+
+29.git merge --no-ff -m "" dev	合并分支，有日志
+
+30.git stash					暂时保存现在的开发内容
+31.git stash lish				查看保存
+32.git stash apply				恢复保存内容，stash内容不会删除
+33.git stash drop				删除stash内容
+33.git stash pop				恢复内容并删除stash
+34.git stash apply stash@{0}	多次添加stash后，按需恢复
+
+35.git branch -D feature-vulcan	强制删除分支：即未合并分支前删除时使用
+
+36.git remote -v				查看远程库信息
+37.git pull 					推送失败后抓取远程库的最新提交
+38.git checkout -b branch-name origin/branch-name	在本地创建和远程分支对应的分支
+39.git branch --set-upstream branch-name origin/branch-name		本地分支与远程分支关联
